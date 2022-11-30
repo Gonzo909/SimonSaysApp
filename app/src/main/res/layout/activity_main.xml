@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/yellowButton"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="94dp"
+        android:backgroundTint="@color/yellow_button_background_color"
+        android:text="@string/yellow"
+        android:textColor="#BF360C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/blueButton"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="@color/blue_button_background_color"
+        android:text="@string/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/redButton"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="51dp"
+        android:backgroundTint="@color/red_button_background_color"
+        android:text="@string/red"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/greenButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yellowButton"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/greenButton"
+        android:layout_width="145dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="@color/green_button_background_color"
+        android:text="@string/green"
+        android:textColor="#1B5E20"
+        app:layout_constraintBottom_toTopOf="@+id/levelCounter"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="165dp"
+        android:backgroundTint="#9C27B0"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelCounter" />
+
+    <Button
+        android:id="@+id/highScoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="138dp"
+        android:backgroundTint="#9C27B0"
+        android:text="@string/high_scores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="166dp"
+        android:backgroundTint="#9C27B0"
+        android:text="@string/exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highScoreButton" />
+
+    <TextView
+        android:id="@+id/levelCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="31dp"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/redButton" />
+
+    <TextView
+        android:id="@+id/levelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/level"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toStartOf="@+id/levelCounter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/redButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
