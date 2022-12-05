@@ -62,23 +62,23 @@ fun play(yButton : Button, bButton : Button, rButton : Button, gButton : Button)
                 when (randomColor) {
                     1 -> {
                         buttonOrder.add("red")
-                        rButton.performClick()
-                        Thread.sleep(800)
+                        rButton.performLongClick()
+                        Thread.sleep(500)
                         } //add this string, blink button
                     2 -> {
                         buttonOrder.add("blue")
-                        bButton.performClick()
-                        Thread.sleep(800)
+                        bButton.performLongClick()
+                        Thread.sleep(500)
                     }
                     3 -> {
                         buttonOrder.add("yellow")
-                        yButton.performClick()
-                        Thread.sleep(800)
+                        yButton.performLongClick()
+                        Thread.sleep(500)
                     }
                     4 -> {
                         buttonOrder.add("green")
-                        gButton.performClick()
-
+                        gButton.performLongClick()
+                        Thread.sleep(500)
                     }
                 }
             }
@@ -86,7 +86,7 @@ fun play(yButton : Button, bButton : Button, rButton : Button, gButton : Button)
         }
 
         //println("Your turn!")
-        //Toast.makeText(Context.this, "Your Turn!", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Your Turn!", Toast.LENGTH_SHORT).show()
 
         //get player's button guesses
         playerOrder.clear()
