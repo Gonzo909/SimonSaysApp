@@ -23,10 +23,7 @@ class MainActivity : AppCompatActivity() {
         val redButton : Button = findViewById(R.id.redButton)
         val greenButton : Button = findViewById(R.id.greenButton)
 
-        var exitPressed = false
-
         //When start is pushed, change button text to show that user is playing
-        while (exitPressed == false) {
             startButton.setOnClickListener {
                 Toast.makeText(this, "Playing", Toast.LENGTH_SHORT).show()
                 play(yellowButton, blueButton, redButton, greenButton)
@@ -34,10 +31,8 @@ class MainActivity : AppCompatActivity() {
 
             exitButton.setOnClickListener {
                 //close app
-                exitPressed = true
                 finish()
             }
-        }
 
     }
 }
@@ -51,7 +46,7 @@ fun play(yButton : Button, bButton : Button, rButton : Button, gButton : Button)
 
     //until the player loses
     while (win) {
-        println("Simon Says...")
+        //println("Simon Says...")
         for (i in 1..level) {
             //only adds to list when iterator is at the end of the list
             if (i > buttonOrder.size) {
@@ -62,39 +57,46 @@ fun play(yButton : Button, bButton : Button, rButton : Button, gButton : Button)
                 when (randomColor) {
                     1 -> {
                         buttonOrder.add("red")
-                        rButton.performLongClick()
-                        Thread.sleep(500)
-                        } //add this string, blink button
+                        } //add this string
                     2 -> {
                         buttonOrder.add("blue")
-                        bButton.performLongClick()
-                        Thread.sleep(500)
                     }
                     3 -> {
                         buttonOrder.add("yellow")
-                        yButton.performLongClick()
-                        Thread.sleep(500)
                     }
                     4 -> {
                         buttonOrder.add("green")
-                        gButton.performLongClick()
-                        Thread.sleep(500)
                     }
                 }
             }
-            Thread.sleep(1000)
         }
 
-        //println("Your turn!")
+        for (button in buttonOrder) {
+            when(button) {
+                "red" -> {
+                    rButton.performLongClick()
+                    Thread.sleep(500)
+                }
+                "blue" -> {
+                    bButton.performLongClick()
+                    Thread.sleep(500)
+                }
+                "yellow" -> {
+                    yButton.performLongClick()
+                    Thread.sleep(500)
+                }
+                "green" -> {
+                    gButton.performLongClick()
+                    Thread.sleep(500)
+                }
+            }
+        }
+
         //Toast.makeText(this, "Your Turn!", Toast.LENGTH_SHORT).show()
 
         //get player's button guesses
         playerOrder.clear()
         for (i in 1..level) {
-            //val playerButton = readln()
-            //playerOrder.add(playerButton)
-            //println("added item $playerButton to index $i")
-
             //when player hits a button, add button to list of player's button order
             rButton.setOnClickListener {
                 playerOrder.add("red")
@@ -111,7 +113,7 @@ fun play(yButton : Button, bButton : Button, rButton : Button, gButton : Button)
         }
 
         //iterates through comp's button order and player's and compares to see if player wins level
-        for (i in 1..level) {
+        for (i in 1..buttonOrder.size) {
             //if player's button order does not match the CPU's
             if (playerOrder[i-1] != buttonOrder[i-1]) {
                 //end game
