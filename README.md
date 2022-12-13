@@ -4,7 +4,7 @@ This is a simple mobile app version of the Simon Says memory game. Once the user
 
 I made this app to explore the process of mobile app creation. I was able to learn how to use Android Studio and the Kotlin language.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/KGX4eccHu7A)
 
 # Development Environment
 
